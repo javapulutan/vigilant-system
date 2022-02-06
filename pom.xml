@@ -15,6 +15,9 @@
 	<description>My personal website</description>
 	<properties>
 		<java.version>17</java.version>
+		<spring-boot-starter-cloud-connectors.version>2.2.6.RELEASE</spring-boot-starter-cloud-connectors.version>
+		<spring-cloud-dependencies.version>Hoxton.SR4</spring-cloud-dependencies.version>
+		<postgresql.version>42.3.2</postgresql.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,8 +40,18 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cloud-connectors</artifactId>
+			<version>${spring-boot-starter-cloud-connectors.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>	
+		
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -47,5 +60,18 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 </project>
