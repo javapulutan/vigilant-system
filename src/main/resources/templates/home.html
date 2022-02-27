@@ -6,5 +6,8 @@
    </head>
    <body>
       <h4>Welcome to Thymeleaf Spring Boot web application from github. Running on java 17.</h4>
+      <div th:each="item : ${posts}">
+         <p th:text="${item.title}"></p>
+      </div>
    </body>
 </html>

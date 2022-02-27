@@ -10,15 +10,15 @@ public class Post {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
 
     private String title;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -28,6 +28,18 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+
+    public static Post createPost(String title){
+
+
+        Post p = new Post();
+
+        p.setTitle(title);
+
+        return p;
+
     }
 
 }
