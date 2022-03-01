@@ -1,5 +1,7 @@
 package com.example.jserilo.ctrl;
 
+import java.util.stream.Collectors;
+
 import com.example.jserilo.post.PostRepository;
 
 import org.slf4j.Logger;
@@ -27,10 +29,13 @@ public class HomeCtrl {
 
         log.debug("home() - entry");
 
-        model.addAttribute("posts", postRepository.findAll());
+        model.addAttribute("posts", postRepository.findAll().stream().map(p -> new PostRecord(p.getId(),p.getTitle())).collect(Collectors.toList()));
 
         return "home";
     }
+
+
+    static record PostRecord(int id, String title){}
 
 
     @GetMapping("/post")
