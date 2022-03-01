@@ -34,10 +34,6 @@ public class HomeCtrl {
         return "home";
     }
 
-
-    static record PostRecord(int id, String title){}
-
-
     @GetMapping("/post")
     public String post(){
 
@@ -45,5 +41,8 @@ public class HomeCtrl {
 
         return "post";
     }
-    
+
+    static record PostRecord(int id, String title){}
+
+
 }
