@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+    </head>
+
+    <body>
+       <div class="container">
+           <header>
+                <nav>
+                    <ul>
+                        <li><a href="http://">Home</a></li>
+                        <li><a href="http://">Web Development</a></li>
+                        <li><a href="http://">Mountaineering</a></li>
+                        <li><a href="http://">Food</a></li>
+                        <li><a href="http://">Travel</a></li>
+                    </ul>
+                </nav> 
+            </header>
+           <main layout:fragment="custom-content"></main>
+           
+       </div>
+    </body>
+</html>
