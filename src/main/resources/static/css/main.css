@@ -43,6 +43,7 @@ body {
 header > nav {
     background-color: black;
     width: 100%;
+    min-height: 30px;
 }
 
 header > nav > ul {
@@ -67,6 +68,21 @@ li:hover a {
     color: #000000;
 }
 
+
+main {
+    display: flex;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-right: 15px;
+}
+
+main .main-feed {
+    flex-grow: 2;
+    background-color: #000000;
+    color: #ffffff;
+    
+}
+
 .footer {
     /*
     position: absolute;
@@ -80,4 +96,36 @@ li:hover a {
    
    padding: 20px 0 20px 0;
 
+}
+
+@media screen and (max-width: 390px) {
+    .container {
+   
+        min-height: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #ffffff;
+        
+      
+    }
+
+    nav a {
+        display: none;
+    }
+
+    main {
+        display: flex;
+        padding-left: 0;
+        padding-top: 20px;
+        padding-right: 0;
+        flex-direction: column;
+    }
+    
+    main .main-feed {
+        flex-grow: 0;
+        background-color: #000000;
+        color: #ffffff;
+        
+    }
+    
 }
