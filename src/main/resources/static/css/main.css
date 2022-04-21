@@ -39,9 +39,16 @@ body {
     height: 100%;*/
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+}
 
+nav button {
+    display: none;
+}
 header > nav {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
     min-height: 30px;
 }
@@ -52,7 +59,7 @@ header > nav > ul {
 }
 
 header > nav > ul > li {
-    
+    display: block;
 }
 
 li a {
@@ -96,6 +103,63 @@ main .main-feed {
    
    padding: 20px 0 20px 0;
 
+}
+
+@media screen and (max-width: 900px){
+    .container{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 614px){
+   
+    header nav {
+        display: flex;
+        flex-direction: column-reverse;
+
+        background-color: rgba(0,0, 0, 0.8);
+       
+       -webkit-transition: all .3s ease .15s;
+       -moz-transition: all .3s ease .15s;
+       -o-transition: all .3s ease .15s;
+       -ms-transition: all .3s ease .15s;
+       transition: all .3s ease .15s;
+    }
+    header nav ul {
+       display: none;
+
+   }
+
+    nav div {
+     
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    nav button {
+        display: block;
+        margin: 10px 10px 10px 10px;
+        padding: 7px 7px 7px 7px;
+    }
+
+    .block-menu {
+        display: block;
+        width: 100%;
+    }
+
+    .nav-fade {
+
+        background-color: rgba(0,0, 0, 0.7);
+       
+        -webkit-transition: all .5s ease .2s;
+        -moz-transition: all .5s ease .2s;
+        -o-transition: all .5s ease .2s;
+        -ms-transition: all .5s ease .2s;
+        transition: all .5s ease .2s;
+ 
+
+    }
 }
 
 @media screen and (max-width: 414px) {

@@ -6,23 +6,45 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/main.css}">
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
     </head>
 
     <body>
        <div class="container">
            <header>
-                <nav>
-                    <ul>
+                <nav id="nav-bar">
+                    <ul id="menu-list"> 
                         <li><a href="http://">Home</a></li>
                         <li><a href="http://">Web Development</a></li>
                         <li><a href="http://">Mountaineering</a></li>
                         <li><a href="http://">Food</a></li>
                         <li><a href="http://">Travel</a></li>
                     </ul>
+                    <div>
+                        <button id="btnMenu"><i class="fa-solid fa-bars"></i></button>
+                    </div>
                 </nav> 
             </header>
            <main layout:fragment="custom-content"></main>
            
        </div>
+       <script>
+           const btnMenu = document.getElementById('btnMenu');
+           const menuList = document.getElementById('menu-list');
+           const nav = document.getElementById('nav-bar');
+
+           btnMenu.addEventListener("click", function(){
+            //alert('test');
+            //var blockMenu = document.getElementsByClassName('block-menu');
+            if(menuList.classList.contains('block-menu')){
+                menuList.classList.remove('block-menu');
+                nav.classList.remove('nav-fade');
+            }else{
+                menuList.classList.add('block-menu');
+                nav.classList.add('nav-fade');
+            }
+           });
+
+       </script>
     </body>
 </html>
